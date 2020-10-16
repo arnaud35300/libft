@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 22:50:38 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/15 15:53:02 by arguilla         ###   ########.fr       */
+/*   Created: 2020/10/15 17:00:22 by arguilla          #+#    #+#             */
+/*   Updated: 2020/10/15 17:57:55 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	return (c >= 0 && c <= 127);
+	char *last_match;
+
+	last_match = NULL;
+	while (*s)
+	{
+		if (*s == c)
+			last_match = ((char *)(s));
+		s++;
+	}
+	if (c == '\0')
+		last_match = ((char *)(s));
+	return (last_match);
 }

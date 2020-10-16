@@ -6,7 +6,7 @@
 #    By: arguilla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 21:39:55 by arguilla          #+#    #+#              #
-#    Updated: 2020/10/14 01:08:59 by arguilla         ###   ########.fr        #
+#    Updated: 2020/10/16 02:05:49 by arguilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,14 @@ SRCS = ft_strlen.c\
 	   ft_bzero.c\
 	   ft_calloc.c\
 	   ft_strchr.c\
-	   ft_strdup.c
+	   ft_strrchr.c\
+	   ft_strdup.c\
+	   ft_strncmp.c\
+	   ft_strlcat.c\
+	   ft_strlcpy.c\
+	   ft_memset.c\
+	   ft_memcpy.c\
+	   ft_memccpy.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 RM = rm -f
