@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 00:01:13 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/02 09:03:54 by arguilla         ###   ########.fr       */
+/*   Created: 2020/11/02 18:54:39 by arguilla          #+#    #+#             */
+/*   Updated: 2020/11/02 21:04:33 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*r;
+	size_t	r_len;
 	size_t	i;
-	void	**tab;
 
-	if (nmemb == 0 || size == 0)
-	{
-		nmemb = 1;
-		size = 1;
-	}
-	i = 0;
-	tab = malloc(nmemb);
-	if (!tab)
+	if (start >= ft_strlen(s) || !s || len <= 0)
+		return (ft_strdup(""));
+	r_len = len - start;
+	if (start + len > ft_strlen(s))
+		r_len = ft_strlen(s) - start;
+	r = malloc(sizeof(char) * (r_len + 1));
+	if (!r)
 		return (NULL);
-	while (i < nmemb)
+	i = 0;
+	while (s[i + start] != '\0' && i < len)
 	{
-		tab[i] = malloc(size);
-		if (!tab[i])
-			return (NULL);
-		tab[i] = NULL;
+		r[i] = s[i + start];
 		i++;
 	}
-	return (tab);
+	r[i] = '\0';
+	return (r);
 }

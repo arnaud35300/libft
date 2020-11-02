@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 00:01:13 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/02 09:03:54 by arguilla         ###   ########.fr       */
+/*   Created: 2020/11/02 11:06:32 by arguilla          #+#    #+#             */
+/*   Updated: 2020/11/02 11:48:47 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	void	**tab;
+	size_t i;
 
-	if (nmemb == 0 || size == 0)
-	{
-		nmemb = 1;
-		size = 1;
-	}
+	if (n == 0)
+		return (0);
 	i = 0;
-	tab = malloc(nmemb);
-	if (!tab)
-		return (NULL);
-	while (i < nmemb)
-	{
-		tab[i] = malloc(size);
-		if (!tab[i])
-			return (NULL);
-		tab[i] = NULL;
+	while ((i < n - 1) && (*(char *)(s1 + i) == *(char *)(s2 + i)
+				&& *(char *)(s2 + i) && *(char *)(s1 + i)))
 		i++;
-	}
-	return (tab);
+	return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
 }

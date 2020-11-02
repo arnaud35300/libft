@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 00:01:13 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/02 09:03:54 by arguilla         ###   ########.fr       */
+/*   Created: 2020/11/02 10:50:12 by arguilla          #+#    #+#             */
+/*   Updated: 2020/11/02 11:02:38 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	void	**tab;
-
-	if (nmemb == 0 || size == 0)
+	while (n && *(char *)s != '\0')
 	{
-		nmemb = 1;
-		size = 1;
+		if (c == *(char *)s)
+			return ((void *)s);
+		s++;
+		n--;
 	}
-	i = 0;
-	tab = malloc(nmemb);
-	if (!tab)
-		return (NULL);
-	while (i < nmemb)
-	{
-		tab[i] = malloc(size);
-		if (!tab[i])
-			return (NULL);
-		tab[i] = NULL;
-		i++;
-	}
-	return (tab);
+	return (NULL);
 }
