@@ -6,7 +6,7 @@
 #    By: arguilla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 21:39:55 by arguilla          #+#    #+#              #
-#    Updated: 2020/11/02 22:06:15 by arguilla         ###   ########.fr        #
+#    Updated: 2020/11/03 19:00:42 by arguilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,19 @@ SRCS = ft_strlen.c\
 	   ft_itoa.c\
 	   ft_substr.c\
 	   ft_strjoin.c\
-	   ft_strtrim.c
+	   ft_strtrim.c\
+	   ft_split.c\
+	   ft_strmapi.c\
+	   ft_putchar_fd.c\
+	   ft_putstr_fd.c\
+	   ft_putendl_fd.c\
+	   ft_putnbr_fd.c\
+	   ft_lstnew.c\
+	   ft_lstadd_front.c\
+	   ft_lstsize.c\
+	   ft_lstlast.c\
+	   ft_lstadd_back.c
+	
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 RM = rm -f
