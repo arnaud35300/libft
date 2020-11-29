@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 01:05:50 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/14 01:20:02 by arguilla         ###   ########.fr       */
+/*   Updated: 2020/11/29 17:17:34 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ char	*ft_strdup(const char *s)
 		s_copy[i] = s[i];
 		i++;
 	}
+	s_copy[i] = '\0';
 	return (char *)(s_copy);
 }
