@@ -6,18 +6,26 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 22:27:53 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/13 22:36:44 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:24:32 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+/*
+** Count the number of characters in a string.
+**
+** @param	s	=> the string whose length we want to know.
+**
+** return	the length of the string s.
+*/
+
+size_t	ft_strlen(const char *s)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }

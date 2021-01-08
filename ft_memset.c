@@ -6,22 +6,32 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 01:13:55 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/16 01:30:59 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 11:11:50 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+/*
+** Write len bytes of value c to the string b.
+**
+** @param	b	=> the string to modify.
+** @param	c	=> the character to write.
+** @param	len	=> the length of the writable area.
+**
+** @return	its first argument.
+*/
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	char *r;
 
-	r = s;
-	while (n)
+	r = b;
+	while (len)
 	{
-		*(char *)s = c;
-		s++;
-		n--;
+		*(char *)b = c;
+		b++;
+		len--;
 	}
 	return (r);
 }

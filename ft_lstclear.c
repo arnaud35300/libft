@@ -6,11 +6,21 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 10:46:13 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/04 11:32:22 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 10:08:59 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
+/*
+** Delete and free memory of lst, and all next element.
+**
+** @param	lst		=> the element to delete.
+** @param	del		=> the function which delete element.
+**
+** @return	void.
+*/
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

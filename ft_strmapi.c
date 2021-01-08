@@ -6,11 +6,21 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 10:17:20 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/03 10:47:06 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:29:03 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Applicate the function f for each character of the string s and create
+** a new string with the new value.
+**
+** @param	s	=> the string to browse.
+** @param	f	=> the function that will be call for each characters.
+**
+** @return	the new string.
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

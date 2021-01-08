@@ -6,33 +6,34 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 00:01:13 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/02 09:03:54 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 09:17:41 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	size_t	i;
-	void	**tab;
+/*
+** Allocates memory for an array of count elements of size bytes.
+** The memory is set to zero.
+**
+** @param	count	=> the length of array.
+** @param	size	=> the size of each array value.
+**
+** @return	pointer to the allocated, NULL if malloc fails.
+*/
 
-	if (nmemb == 0 || size == 0)
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*buffer;
+
+	if (count == 0 || size == 0)
 	{
-		nmemb = 1;
+		count = 1;
 		size = 1;
 	}
-	i = 0;
-	tab = malloc(nmemb);
-	if (!tab)
+	buffer = malloc(sizeof(count * size));
+	if (!buffer)
 		return (NULL);
-	while (i < nmemb)
-	{
-		tab[i] = malloc(size);
-		if (!tab[i])
-			return (NULL);
-		tab[i] = NULL;
-		i++;
-	}
-	return (tab);
+	ft_bzero(buffer, (count * size));
+	return (buffer);
 }

@@ -6,11 +6,15 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 17:00:22 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/15 17:57:55 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:42:26 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Same as ft_strchr but the search start at the end of the string s.
+*/
 
 char	*ft_strrchr(const char *s, int c)
 {

@@ -6,29 +6,38 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 23:27:52 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/13 23:34:58 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 09:21:06 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+/*
+** Convert string to integer.
+**
+** @param	str	=> the string to be converted.
+**
+** @return	a number representing the conversion of the string, 0 if string
+** is not convertible.
+*/
+
+int	ft_atoi(const char *str)
 {
-	int r;
-	int s;
+	int	r;
+	int	s;
 
 	r = 0;
 	s = 1;
-	while (*nptr == 32 || (*nptr >= 8 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '+' || *nptr == '-')
+	while (*str == 32 || (*str >= 8 && *str <= 13))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		if (*nptr == '-')
+		if (*str == '-')
 			s = -1;
-		nptr++;
+		str++;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		r = r * 10 + *nptr - 48;
-		nptr++;
+		r = r * 10 + *str - 48;
+		str++;
 	}
 	return (r * s);
 }

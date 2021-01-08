@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:47:28 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/02 22:47:38 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:47:28 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,17 @@ static int	is_set(const char c, const char *set)
 	}
 	return (0);
 }
+
+/*
+** Create a copy of the string s1 without the set characters at the beginning
+** and at the end of the string s1.
+**
+** @param	s1	=> the string to trim.
+** @param	set	=> the character to remove.
+**
+** @return	new string without the set character at the beginning and
+** at the end.
+*/
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

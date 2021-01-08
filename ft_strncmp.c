@@ -6,11 +6,21 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 18:37:49 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/16 01:12:49 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:33:17 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Compares the string s1 with the string s1 up to n characters.
+**
+** @param	s1	=> the string that wll be compared with s2.
+** @param	s2	=> the string that wll be compared with s1.
+**
+** @return	0 if the two strings are identical, otherwise returns the
+** difference between the first two differing bytes.
+*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

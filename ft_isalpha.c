@@ -6,9 +6,17 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:23:07 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/13 22:32:20 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 09:27:55 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Check if a character is alphanumeric (lower or upper case).
+**
+** @param	c	=> the character will be compared.
+**
+** @return	boolean value.
+*/
 
 int	ft_isalpha(int c)
 {

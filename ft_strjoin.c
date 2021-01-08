@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:18:42 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/02 21:46:50 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:12:47 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ static void	assign(char *r, char const *s, size_t *i)
 		(*i)++;
 	}
 }
+
+/*
+** Creation of a string resulting from the concatenation of two
+** sub-strings.
+**
+** @param	s1	=> the first string.
+** @param	s2	=> the second string.
+**
+** @return	the string resulting from the concatenation of s1 and s2.
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

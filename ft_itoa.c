@@ -6,11 +6,19 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 15:18:58 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/02 18:47:00 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 09:37:27 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Give the absolute value of a number
+**
+** @param	n	=> the number where we want to know its absolute value.
+**
+** @return	the absolute value of n.
+*/
 
 static int	get_absolute(int n)
 {
@@ -18,6 +26,14 @@ static int	get_absolute(int n)
 		return (n);
 	return (-n);
 }
+
+/*
+** Calculate the length of a number.
+**
+** @param	n	=> the number where we want to know its length.
+**
+** @return	the n length.
+*/
 
 static int	get_len(int n)
 {
@@ -34,7 +50,16 @@ static int	get_len(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+/*
+** Convert int to string.
+**
+** @param	n	=> the number to be converted.
+**
+** @return	a string representing the conversion of the number, NULL
+** if malloc fails.
+*/
+
+char		*ft_itoa(int n)
 {
 	char	*r;
 	int		len;

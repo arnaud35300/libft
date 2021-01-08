@@ -6,11 +6,22 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 11:06:32 by arguilla          #+#    #+#             */
-/*   Updated: 2020/11/02 11:48:47 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 10:56:07 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Compare byte string s1 against byte string s2.
+**
+** @param	s1	=> the string to be compared with s2.
+** @param	s2	=> the string to be compared with s1.
+** @param	n	=> the max length to the comparison.
+**
+** @return	0 if the two strings are identical, otherwise returns the
+** difference between the first two differing bytes.
+*/
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

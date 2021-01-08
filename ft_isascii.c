@@ -6,9 +6,17 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:50:38 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/15 15:53:02 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 09:28:56 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Check if a character is in the ascii table.
+**
+** @param	c	=> the character will be compared.
+**
+** @return	boolean value.
+*/
 
 int	ft_isascii(int c)
 {

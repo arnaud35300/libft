@@ -6,11 +6,23 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 22:10:25 by arguilla          #+#    #+#             */
-/*   Updated: 2020/10/16 01:12:33 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:18:41 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Copy and concatenates the string src in dst after the content of dst.
+**
+** @param	dst		=> the destination string.
+** @param	src		=> the string to concatenate in dst.
+** @param	size	=> the length of writable area dst.
+**
+** @return	the result of adding the lengths of dst and src,
+** or the result of adding the lengths of dst and size if size is less than or
+** equal to the length of dst.
+*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
