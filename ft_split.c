@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 09:15:30 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/08 12:57:06 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/14 11:39:45 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,42 +36,28 @@ static int	get_tab_len(char const *s, char c)
 	return (count);
 }
 
-static int	assign_char(char *current_s, char const *s, char c, int index)
+static int	assign_char(char *current_s, char const **s, char c, int index)
 {
 	int	i;
 	int count;
 	int	len;
 
-	len = 0;
 	i = 0;
-	count = 0;
-	if (!is_charset(s[0], c))
-		count++;
-	while (s[i])
-	{
-		if (i > 0)
-			if (is_charset(s[i - 1], c) && !is_charset(s[i], c))
-				count++;
-		if (index + 1 == count)
-			break;
-		i++;
-	}
-	while (!is_charset(s[i + len], c))
+	len = 0;
+	while (is_charset(*(*s), c))
+		(*s)++;
+	while (!is_charset(*(*s + len), c))
 		len++;
-	current_s = malloc(sizeof(len) + 1);
+	current_s = malloc(sizeof(char) * len + 1);
 	if (!current_s)
 		return (0);
-	while (!is_charset(s[i], c) && s[i])
+	while (!is_charset(*(*s + i), c))
 	{
-		printf("char : %c\n", s[i]);
+		current_s[i] = *(*s + i);
 		i++;
-		*current_s = s[i];
-		printf("char conv: %c\n", *current_s);
-		i++;
-		current_s++;
 	}
-	*current_s = '\0';
-	printf("bienspasser %s\n", current_s);
+	current_s[i] = '\0';
+	(*s)+= len;
 	return (1);
 }
 
@@ -114,9 +100,9 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < len)
 	{
-		printf("wesh");
-		if (!tab[i] || !assign_char(tab[i], s, c, i))
+		if (!assign_char(tab[i], &s, c, i))
 			return (exit_and_free(tab, 0));
+		printf("%s\n", tab[i]);
 		i++;
 	}
 	return (tab);
@@ -127,6 +113,6 @@ int main(void)
 	char *str = " coucou salut   bonjour ";
 	char **tab = ft_split(str, ' ');
 	int i = -1;
-	while (tab[++i])
-		printf("tab %d : %s\n", i, tab[i]);
+	//while (tab[++i])
+	//	printf("tab %d : %s\n", i, tab[i]);
 }
