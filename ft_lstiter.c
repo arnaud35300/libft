@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 11:39:03 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/08 10:13:18 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/14 12:09:21 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** @return	void.
 */
 
-void	ft_lstiter(t_list *lst, void(*f)(void*))
+void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
 	if (!lst || !f)
 		return ;

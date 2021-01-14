@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:47:28 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/08 13:47:28 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/14 12:11:16 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len--;
 	}
 	len = ft_strlen(s1) - i;
-	r = malloc(sizeof(char) * (len + 1));
-	i = 0;
-	while (i < len)
-	{
+	if (!(r = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	i = -1;
+	while (++i < len)
 		r[i] = s1[i];
-		i++;
-	}
 	r[i] = '\0';
 	return (r);
 }
