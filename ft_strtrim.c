@@ -37,7 +37,7 @@ static int	is_set(const char c, const char *set)
 ** at the end.
 */
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	char		*r;
 	size_t		i;

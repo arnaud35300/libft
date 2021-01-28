@@ -28,10 +28,13 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*buffer;
 
 	i = 0;
-	buffer = (unsigned char*)s;
-	while (i < n)
+	if (n > 0)
 	{
-		buffer[i] = 0;
-		i++;
+		buffer = (unsigned char*)s;
+		while (i < n)
+		{
+			buffer[i] = 0;
+			i++;
+		}
 	}
 }

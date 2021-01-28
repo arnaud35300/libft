@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-static int	is_charset(char c, char charset)
+static int		is_charset(char c, char charset)
 {
 	return (c == charset || c == '\0');
 }
 
-static int	get_tab_len(char const *s, char c)
+static int		get_tab_len(char const *s, char c)
 {
 	int	i;
 	int count;
@@ -35,7 +35,7 @@ static int	get_tab_len(char const *s, char c)
 	return (count);
 }
 
-static char	*assign_char(char *current_s, char const **s, char c)
+static char		*assign_char(char *current_s, char const **s, char c)
 {
 	int	i;
 	int	len;
@@ -59,7 +59,7 @@ static char	*assign_char(char *current_s, char const **s, char c)
 	return (current_s);
 }
 
-char	**exit_and_free(char **tab, int only_tab)
+char			**exit_and_free(char **tab, int only_tab)
 {
 	int	i;
 
@@ -84,7 +84,7 @@ char	**exit_and_free(char **tab, int only_tab)
 ** @return	array of multiples part of the string s, NULL if malloc fails.
 */
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		len;
