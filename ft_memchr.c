@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 10:50:12 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/08 10:49:30 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/29 07:47:45 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,18 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (n && *(char *)s != '\0')
+	unsigned char	charset;
+	unsigned char	*compare;
+	size_t			i;
+
+	i = 0;
+	charset = (unsigned char)c;
+	compare = (unsigned char*)s;
+	while (i < n)
 	{
-		if (c == *(char *)s)
-			return ((void *)s);
-		s++;
-		n--;
+		if (charset == compare[i])
+			return ((void *)(s + i));
+		i++;
 	}
 	return (NULL);
 }

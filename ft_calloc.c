@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 00:01:13 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/08 09:17:41 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/29 07:37:19 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*buffer;
+	unsigned char	*buffer;
 
-	if (count == 0 || size == 0)
-	{
-		count = 1;
-		size = 1;
-	}
-	buffer = malloc(sizeof(count * size));
+	buffer = malloc(count * size);
 	if (!buffer)
 		return (NULL);
 	ft_bzero(buffer, (count * size));
-	return (buffer);
+	return ((void *)buffer);
 }

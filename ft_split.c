@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 09:15:30 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/14 12:00:06 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/29 11:46:40 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int		get_tab_len(char const *s, char c)
 
 	i = 1;
 	count = 0;
-	if (!is_charset(s[0], c))
+	if (s && !is_charset(s[0], c))
 		count++;
-	while (s[i])
+	while (s && s[i])
 	{
 		if (is_charset(s[i - 1], c) && !is_charset(s[i], c))
 			count++;
@@ -59,17 +59,16 @@ static char		*assign_char(char *current_s, char const **s, char c)
 	return (current_s);
 }
 
-char			**exit_and_free(char **tab, int only_tab)
+char			**exit_and_free(char **tab)
 {
 	int	i;
 
 	i = 0;
-	if (!only_tab)
-		while (tab[i])
-		{
-			free(tab[i]);
-			i++;
-		}
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
 	free(tab);
 	return (NULL);
 }
@@ -93,15 +92,15 @@ char			**ft_split(char const *s, char c)
 	len = get_tab_len(s, c);
 	tab = malloc(sizeof(char *) * (len + 1));
 	if (!tab)
-		return (exit_and_free(tab, 1));
-	tab[len] = NULL;
+		return (NULL);
 	i = 0;
-	while (i < len)
+	while (s && i < len)
 	{
 		tab[i] = assign_char(tab[i], &s, c);
 		if (!tab[i])
-			return (exit_and_free(tab, 0));
+			return (exit_and_free(tab));
 		i++;
 	}
+	tab[i] = NULL;
 	return (tab);
 }

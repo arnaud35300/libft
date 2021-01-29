@@ -6,7 +6,7 @@
 #    By: arguilla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 21:39:55 by arguilla          #+#    #+#              #
-#    Updated: 2020/11/04 15:07:53 by arguilla         ###   ########.fr        #
+#    Updated: 2021/01/29 11:01:46 by arguilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,15 +65,13 @@ CFLAGS = -Wall -Wextra -Werror
 all: ${NAME}
 
 $(NAME) : ${OBJS}
-	ar rc ${NAME} ${OBJS}
-	ranlib ${NAME}
+	ar rc $@ $^
 
-bonus: ${BONUS} ${OBJS_BONUS}	
-	ar r ${NAME} ${OBJS} ${OBJS_BONUS}
-	ranlib ${NAME}
+bonus: ${OBJS} ${OBJS_BONUS}	
+	ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
+	$(CC) $(FLAGS) -o $@ -c $<
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
