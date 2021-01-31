@@ -26,7 +26,7 @@ static int		get_tab_len(char const *s, char c)
 	count = 0;
 	if (s && !is_charset(s[0], c))
 		count++;
-	while (s && s[i])
+	while (s && s[0] && s[i])
 	{
 		if (is_charset(s[i - 1], c) && !is_charset(s[i], c))
 			count++;
