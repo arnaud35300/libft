@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 10:17:20 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/08 13:29:03 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/01/15 17:51:44 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*r;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	r = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!r || !s || !f)
 		return (NULL);

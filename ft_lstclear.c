@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 10:46:13 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/14 12:09:33 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/02/03 18:33:52 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 **
 ** @return	void.
 */
-
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list *tmp;
