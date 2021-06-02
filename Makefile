@@ -45,7 +45,9 @@ SRCS 		= ft_strlen.c\
 	  		  ft_putchar_fd.c\
 	  		  ft_putstr_fd.c\
 	  		  ft_putendl_fd.c\
-	  		  ft_putnbr_fd.c
+	  		  ft_putnbr_fd.c\
+			  get_next_line_utils.c\
+			  get_next_line.c
 BONUS		= ft_lstnew.c\
 	   		  ft_lstadd_front.c\
 	   		  ft_lstsize.c\
@@ -54,7 +56,7 @@ BONUS		= ft_lstnew.c\
 	   		  ft_lstdelone.c\
 	   		  ft_lstclear.c\
 	   		  ft_lstiter.c\
-	   		  ft_lstmap.c	
+	   		  ft_lstmap.c\
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(BONUS:.c=.o)
 CC = gcc

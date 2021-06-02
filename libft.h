@@ -16,6 +16,10 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
+# define FDMAX 257
 
 typedef struct	s_list
 {
@@ -67,5 +71,10 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void(*f)(void*));
 t_list			*ft_lstmap(t_list *lst,
 							void *(*f)(void *), void (*del)(void *));
+size_t			ft_strlen_g(const char *s);
+int				check_line(char *str);
+char			*ft_substr_g(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin_g(char const *s1, char const *s2);
+int				get_next_line(int fd, char **line);
 
 #endif
