@@ -6,7 +6,7 @@
 #    By: arguilla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 21:39:55 by arguilla          #+#    #+#              #
-#    Updated: 2021/01/29 11:01:46 by arguilla         ###   ########.fr        #
+#    Updated: 2021/06/15 21:17:58 by arguilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,9 @@ SRCS 		= ft_strlen.c\
 	  		  ft_putstr_fd.c\
 	  		  ft_putendl_fd.c\
 	  		  ft_putnbr_fd.c\
-			  get_next_line_utils.c\
-			  get_next_line.c
+			  get_next_line.c\
+			  get_next_line_utils.c
+
 BONUS		= ft_lstnew.c\
 	   		  ft_lstadd_front.c\
 	   		  ft_lstsize.c\
@@ -56,7 +57,7 @@ BONUS		= ft_lstnew.c\
 	   		  ft_lstdelone.c\
 	   		  ft_lstclear.c\
 	   		  ft_lstiter.c\
-	   		  ft_lstmap.c\
+	   		  ft_lstmap.c
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(BONUS:.c=.o)
 CC = gcc
@@ -64,16 +65,17 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: ${NAME}
+all: $(NAME)
 
-$(NAME) : ${OBJS}
+$(NAME): $(OBJS)
 	ar rc $@ $^
+	ranlib $@
 
-bonus: ${OBJS} ${OBJS_BONUS}	
-	ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
-
+bonus: $(OBJS) $(OBJS_BONUS)	
+	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
+	ranlib $(NAME)
 %.o: %.c
-	$(CC) $(FLAGS) -o $@ -c $<
+	gcc $(CFLAGS) -c -o $@ $<
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
@@ -83,5 +85,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean re fclean bonus
-
+#.PHONY: all clean re fclean bonus
