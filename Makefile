@@ -6,7 +6,7 @@
 #    By: arguilla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 21:39:55 by arguilla          #+#    #+#              #
-#    Updated: 2021/06/15 21:17:58 by arguilla         ###   ########.fr        #
+#    Updated: 2021/08/23 01:10:49 by arguilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,8 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
+VPATH =	char:file:int:lst:mem:print:str
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -75,7 +77,7 @@ bonus: $(OBJS) $(OBJS_BONUS)
 	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
 	ranlib $(NAME)
 %.o: %.c
-	gcc $(CFLAGS) -c -o $@ $<
+	gcc $(CFLAGS) -I./ -I./char -I./file -I./int -I./lst -I./mem -I./print -I./str -c -o $@ $<
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)

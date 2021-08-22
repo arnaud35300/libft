@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 10:46:13 by arguilla          #+#    #+#             */
-/*   Updated: 2021/02/03 18:33:52 by arguilla         ###   ########.fr       */
+/*   Created: 2020/10/15 17:00:22 by arguilla          #+#    #+#             */
+/*   Updated: 2021/01/08 13:42:26 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Delete and free memory of lst, and all next element.
-**
-** @param	lst		=> the element to delete.
-** @param	del		=> the function which delete element.
-**
-** @return	void.
+** Same as ft_libft.hr but the search start at the end of the string s.
 */
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list *tmp;
 
-	if (!*lst || !del)
-		return ;
-	while (*lst)
+char	*ft_strrchr(const char *s, int c)
+{
+	char *last_match;
+
+	last_match = NULL;
+	while (*s)
 	{
-		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = tmp;
+		if (*s == c)
+			last_match = ((char *)(s));
+		s++;
 	}
+	if (c == '\0')
+		last_match = ((char *)(s));
+	return (last_match);
 }
