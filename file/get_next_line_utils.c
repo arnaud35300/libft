@@ -6,11 +6,11 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 19:30:42 by arguilla          #+#    #+#             */
-/*   Updated: 2021/02/16 14:11:10 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/08/23 01:19:05 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 /*
 ** Count the number of characters in a string.
@@ -89,7 +89,7 @@ char	*ft_substr_g(char const *s, unsigned int start, size_t len)
 	return (r);
 }
 
-void	assign(char *r, char const *s, size_t *i)
+static void	assign(char *r, char const *s, size_t *i)
 {
 	while (*s)
 	{

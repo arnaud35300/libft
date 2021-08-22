@@ -6,7 +6,7 @@
 /*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 17:24:53 by arguilla          #+#    #+#             */
-/*   Updated: 2021/01/08 10:31:43 by arguilla         ###   ########.fr       */
+/*   Updated: 2021/08/23 00:17:58 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *elem;
+	t_list	*elem;
 
 	elem = malloc(sizeof(t_list));
 	if (!elem)

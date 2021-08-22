@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   char.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arguilla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arguilla <arguilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 18:54:50 by arguilla          #+#    #+#             */
-/*   Updated: 2021/08/23 00:42:14 by arguilla         ###   ########.fr       */
+/*   Created: 2021/08/23 00:04:47 by arguilla          #+#    #+#             */
+/*   Updated: 2021/08/23 00:27:00 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef CHAR_H
+# define CHAR_H
 
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-# include "char.h"
-# include "file.h"
-# include "int.h"
-# include "lst.h"
-# include "mem.h"
-# include "print.h"
-# include "str.h"
+int	ft_tolower(int c);
+int	ft_toupper(int c);
+int	ft_isalnum(int c);
+int	ft_isprint(int c);
+int	ft_isalpha(int c);
+int	ft_isascii(int c);
+int	ft_isdigit(int c);
 
 #endif

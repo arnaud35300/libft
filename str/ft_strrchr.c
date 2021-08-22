@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** Same as ft_strchr but the search start at the end of the string s.
+** Same as ft_libft.hr but the search start at the end of the string s.
 */
 
 char	*ft_strrchr(const char *s, int c)
