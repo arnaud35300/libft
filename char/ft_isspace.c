@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.h                                             :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arguilla <arguilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/23 00:04:47 by arguilla          #+#    #+#             */
-/*   Updated: 2021/08/24 22:42:46 by arguilla         ###   ########.fr       */
+/*   Created: 2021/08/24 22:36:43 by arguilla          #+#    #+#             */
+/*   Updated: 2021/08/24 22:43:07 by arguilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHAR_H
-# define CHAR_H
+/*
+** Check if a character si a space.
+**
+** @param	c	=> the character will be compared.
+**
+** @return	boolean value.
+*/
 
-int	ft_tolower(int c);
-int	ft_isspace(int c);
-int	ft_toupper(int c);
-int	ft_isalnum(int c);
-int	ft_isprint(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-
-#endif
+int	ft_isspace(int c)
+{
+	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == ' ');
+}

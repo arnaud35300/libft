@@ -6,7 +6,7 @@
 #    By: arguilla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 21:39:55 by arguilla          #+#    #+#              #
-#    Updated: 2021/08/23 01:10:49 by arguilla         ###   ########.fr        #
+#    Updated: 2021/08/24 22:43:27 by arguilla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ HEADERS = libft.h
 SRCS 		= ft_strlen.c\
 	  		  ft_toupper.c\
 	  		  ft_tolower.c\
+			  ft_isspace.c\
 	  		  ft_isalpha.c\
 	  		  ft_isdigit.c\
 	  		  ft_isalnum.c\
